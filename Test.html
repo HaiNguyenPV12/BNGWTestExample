@@ -1,0 +1,57 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>"Test"</title>
+    <style>
+        body {
+            background-color: #303030;
+            color: white;
+        }
+    </style>
+    <script src="Script1.js"></script>
+    <script>
+        for (var i = 0; i < document.gameform.btn.length; i++) {
+            document.gameform.btn[i].disabled = true;
+        }
+    </script>
+</head>
+<body>
+    <form name="gameform">
+        <table>
+            <tr>
+                <td></td>
+                <td>
+                    <button type="button" onclick="StartGame();">Start</button></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="text" id="txtleft" disabled="disabled" /></td>
+                <td>
+                    <button name="btn" type="button">&gt;</button></td>
+                <td>
+                    <input type="text" id="txtright" disabled="disabled" /></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>
+                    <button name="btn" type="button">=</button></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>
+                    <button name="btn" type="button">&lt;</button></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+        </table>
+    </form>
+</body>
+</html>
