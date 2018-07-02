@@ -1,57 +1,88 @@
 ﻿<!DOCTYPE html>
-
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="utf-8" />
     <title>"Test"</title>
     <style>
+        .content {
+            max-width: 600px;
+            margin: auto;
+        }
+
         body {
             background-color: #303030;
             color: white;
         }
-    </style>
-    <script src="Script1.js"></script>
-    <script>
-        for (var i = 0; i < document.gameform.btn.length; i++) {
-            document.gameform.btn[i].disabled = true;
+
+        .ans {
+            float: right;
         }
-    </script>
+
+        .ansinput {
+            width: 50%;
+            text-align: center;
+        }
+
+        .centertable {
+            text-align: center;
+        }
+    </style>
 </head>
 <body>
-    <form name="gameform">
-        <table>
-            <tr>
-                <td></td>
-                <td>
-                    <button type="button" onclick="StartGame();">Start</button></td>
-                <td></td>
-            </tr>
-            <tr>
-                <td>
-                    <input type="text" id="txtleft" disabled="disabled" /></td>
-                <td>
-                    <button name="btn" type="button">&gt;</button></td>
-                <td>
-                    <input type="text" id="txtright" disabled="disabled" /></td>
-            </tr>
-            <tr>
-                <td></td>
-                <td>
-                    <button name="btn" type="button">=</button></td>
-                <td></td>
-            </tr>
-            <tr>
-                <td></td>
-                <td>
-                    <button name="btn" type="button">&lt;</button></td>
-                <td></td>
-            </tr>
-            <tr>
-                <td></td>
-                <td></td>
-                <td></td>
-            </tr>
-        </table>
-    </form>
+    <div class="content">
+        <h2>Press <span style="font-weight:bold;text-decoration:underline;">START</span> to generate numbers and play.</h2>
+        <form name="gameform">
+            <table>
+                <tr>
+                    <td></td>
+                    <td class="centertable">
+                        <button type="button" onclick="StartGame();">Start</button>
+                    </td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="text" name="txtleft" disabled="disabled" />
+                    </td>
+                    <td class="centertable">
+                        <button name="btn" type="button" id="a>b" disabled onclick="compare(this.id)">A &gt; B</button>
+                    </td>
+                    <td>
+                        <input type="text" name="txtright" disabled="disabled" />
+                    </td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td class="centertable">
+                        <button name="btn" id="a=b" type="button" disabled onclick="compare(this.id);">A = B</button>
+                    </td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td class="centertable">
+                        <button name="btn" type="button" id="a<b" disabled onclick="compare(this.id);">A &lt; B</button>
+                    </td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td class="ans">Correct Answers:</td>
+                    <td class="centertable"><input class="ansinput" type="number" name="canswers" disabled="disabled" /></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td class="ans">Incorrect Answers:</td>
+                    <td class="centertable"><input class="ansinput" type="number" name="icanswers" disabled="disabled" /></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td class="ans">Correct %:</td>
+                    <td class="centertable"><input class="ansinput" type="number" name="panswers" disabled="disabled" /></td>
+                    <td></td>
+                </tr>
+            </table>
+        </form>
+    </div>
+    <script src="Script1.js"></script>
 </body>
 </html>
